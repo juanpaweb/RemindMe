@@ -3,7 +3,6 @@ import { Layout, Text } from "@ui-kitten/components";
 import { Row } from "../../common/Row";
 import { Column } from "../../common/Column";
 import CalendarContainer from "./CalendarContainer";
-import { DAYS, MONTHS } from "../../../utils/date";
 import moment from "moment";
 import styled from "styled-components";
 
@@ -17,8 +16,7 @@ const CustomText = styled(Text)`
   color: #b6c1cd;
 `;
 
-const TopContainer = () => {
-  const [month, setMonth] = useState(null);
+const TopContainer = ({ ...props }) => {
   const [date, setDate] = useState(null);
 
   useEffect(() => {
@@ -28,10 +26,12 @@ const TopContainer = () => {
   const getCurrentMonth = () => {
     const now = new Date();
     const date = `${moment(now).format("ddd")} ${moment(now).format("Do")}`;
-    const month = moment(now).format("MMMM");
 
-    setMonth(month);
     setDate(date);
+  };
+
+  const toggleDetails = () => {
+    props.toggleDetails();
   };
 
   return (
@@ -45,10 +45,7 @@ const TopContainer = () => {
             <CustomText category="h1">{date}</CustomText>
           </Column>
         </Row>
-        <Row>
-          <CustomText category="p1">{month}</CustomText>
-        </Row>
-        <CalendarContainer />
+        <CalendarContainer toggleDetails={props.toggleDetails} />
       </Layout>
     </Container>
   );

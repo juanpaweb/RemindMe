@@ -1,35 +1,14 @@
 import React from "react";
 import { Calendar } from "react-native-calendars";
-import { Icon } from "@ui-kitten/components";
 
-export const LeftArrowIcon = () => {
-  <Icon name="arrow-ios-back-outline" {...style} />;
-};
-
-export const RightArrowIcon = () => {
-  <Icon name="arrow-ios-forward-outline" {...style} />;
-};
-
-const CalendarContainer = () => {
+const CalendarContainer = ({ ...props }) => {
   return (
     <Calendar
       style={{ paddingLeft: 0, paddingRight: 0, width: "100%" }}
+      monthFormat={"MMMM"}
       onDayPress={day => {
-        console.log("selected day", day);
+        props.toggleDetails();
       }}
-      onDayLongPress={day => {
-        console.log("selected day", day);
-      }}
-      monthFormat={""}
-      onMonthChange={month => {
-        console.log("month changed", month);
-      }}
-      hideArrows={false}
-      renderArrow={direction => {
-        direction === "left" ? <LeftArrowIcon /> : <RightArrowIcon />;
-      }}
-      disableMonthChange={true}
-      firstDay={1}
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
       theme={{

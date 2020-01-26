@@ -1,5 +1,6 @@
 import React from "react";
-import { Layout } from "@ui-kitten/components";
+import { Layout, Text } from "@ui-kitten/components";
+import { Row } from "../../common/Row";
 import styled from "styled-components";
 
 const Container = styled(Layout)`
@@ -12,7 +13,13 @@ const Container = styled(Layout)`
 `;
 
 const BottomContainer = () => {
-  return <Container />;
+  return (
+    <Container>
+      <Row>
+        <Text category="h4">No bills due today</Text>
+      </Row>
+    </Container>
+  );
 };
 
 export default BottomContainer;

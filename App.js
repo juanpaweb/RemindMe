@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   ApplicationProvider,
   IconRegistry,
-  Layout,
-  AppLoading
+  Layout
 } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { mapping, light as lightTheme } from "@eva-design/eva";
