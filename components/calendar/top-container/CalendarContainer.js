@@ -1,14 +1,18 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import allActions from "../../../redux/actions";
 import { Calendar } from "react-native-calendars";
 
-const CalendarContainer = ({ ...props }) => {
+const CalendarContainer = () => {
+  const dispatch = useDispatch();
+
   return (
     <Calendar
       style={{ paddingLeft: 0, paddingRight: 0, width: "100%" }}
       monthFormat={"MMMM"}
-      onDayPress={day => {
-        props.toggleDetails();
-      }}
+      onDayPress={day =>
+        dispatch(allActions.calendarActions.toggleCalendarDetails())
+      }
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
       theme={{

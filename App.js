@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./redux/reducers";
 import {
   ApplicationProvider,
   IconRegistry,
@@ -9,6 +12,11 @@ import { mapping, light as lightTheme } from "@eva-design/eva";
 import CalendarMain from "./components/calendar/CalendarMain";
 import * as Font from "expo-font";
 import styled from "styled-components";
+
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const Container = styled(Layout)`
   flex: 1;
@@ -35,7 +43,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <Provider store={store}>
       {fontLoaded ? (
         <>
           <IconRegistry icons={EvaIconsPack} />
@@ -46,7 +54,7 @@ const App = () => {
           </ApplicationProvider>
         </>
       ) : null}
-    </>
+    </Provider>
   );
 };
 

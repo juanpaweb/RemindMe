@@ -16,7 +16,7 @@ const CustomText = styled(Text)`
   color: #b6c1cd;
 `;
 
-const TopContainer = ({ ...props }) => {
+const TopContainer = () => {
   const [date, setDate] = useState(null);
 
   useEffect(() => {
@@ -30,10 +30,6 @@ const TopContainer = ({ ...props }) => {
     setDate(date);
   };
 
-  const toggleDetails = () => {
-    props.toggleDetails();
-  };
-
   return (
     <Container>
       <Layout>
@@ -45,7 +41,7 @@ const TopContainer = ({ ...props }) => {
             <CustomText category="h1">{date}</CustomText>
           </Column>
         </Row>
-        <CalendarContainer toggleDetails={props.toggleDetails} />
+        <CalendarContainer />
       </Layout>
     </Container>
   );

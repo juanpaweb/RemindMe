@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import TopContainer from "./top-container/TopContainer";
 import BottomContainer from "./bottom-container/BottomContainer";
 
 const CalendarMain = () => {
-  const [isDetailsShown, setIsDetailsShown] = useState(false);
-
-  const toggleDetails = () => {
-    setIsDetailsShown(!isDetailsShown);
-  };
+  const calendar = useSelector(state => state.calendar);
 
   return (
     <>
-      <TopContainer toggleDetails={toggleDetails} />
-      {isDetailsShown ? (
-        <BottomContainer isDetailsShown={isDetailsShown} />
-      ) : null}
+      <TopContainer />
+      {calendar.showCalendarDetails ? <BottomContainer /> : null}
     </>
   );
 };
