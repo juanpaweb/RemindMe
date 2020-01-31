@@ -1,4 +1,10 @@
-import { TOGGLE_CALENDAR_DETAILS } from "../actionTypes";
+import { TOGGLE_CALENDAR_DETAILS, GET_BILLS_FOR_DAY } from "../actionTypes";
+
+const getBillsForCurrentDay = () => {
+  return {
+    type: GET_BILLS_FOR_DAY
+  };
+};
 
 const toggleCalendarDetails = () => {
   return {
@@ -7,5 +13,6 @@ const toggleCalendarDetails = () => {
 };
 
 export default {
+  getBillsForCurrentDay,
   toggleCalendarDetails
 };

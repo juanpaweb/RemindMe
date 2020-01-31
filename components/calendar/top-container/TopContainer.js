@@ -12,7 +12,7 @@ const Container = styled(Layout)`
   padding: 64px 16px 16px 16px;
 `;
 
-const CustomText = styled(Text)`
+const DateText = styled(Text)`
   color: #b6c1cd;
 `;
 
@@ -38,7 +38,7 @@ const TopContainer = () => {
             <Text category="h1">Today, </Text>
           </Column>
           <Column col={3}>
-            <CustomText category="h1">{date}</CustomText>
+            <DateText category="h1">{date}</DateText>
           </Column>
         </Row>
         <CalendarContainer />
