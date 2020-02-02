@@ -1,8 +1,8 @@
-import { TOGGLE_CALENDAR_DETAILS, GET_BILLS_FOR_DAY } from "../actionTypes";
+import { GET_BILLS_FOR_DAY, TOGGLE_ADD_BILLS } from "../actionTypes";
 
 const initialState = {
-  showCalendarDetails: false,
-  isLoadingBills: true
+  isLoadingBills: true,
+  isAddBillsVisible: false
 };
 
 const calendar = (state = initialState, action) => {
@@ -13,10 +13,10 @@ const calendar = (state = initialState, action) => {
         isLoadingBills: false
       };
 
-    case TOGGLE_CALENDAR_DETAILS:
+    case TOGGLE_ADD_BILLS:
       return {
         ...state,
-        showCalendarDetails: !state.showCalendarDetails
+        isAddBillsVisible: !state.isAddBillsVisible
       };
 
     default:

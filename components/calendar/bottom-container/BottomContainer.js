@@ -5,6 +5,7 @@ import { BulletList } from "react-content-loader/native";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../../redux/actions";
 import styled from "styled-components";
+import AddBill from "./AddBill";
 
 const Container = styled(Layout)`
   height: 100%;
@@ -32,10 +33,10 @@ const BillsText = styled(Text)`
 
 const BottomContainer = () => {
   const dispatch = useDispatch();
-
-  const calendar = useSelector(state => state.calendar);
+  const isLoadingBills = useSelector(state => state.calendar.isLoadingBills);
 
   useEffect(() => {
+    // Temporary loading animation func for bills on selected day
     setTimeout(() => {
       dispatch(allActions.calendarActions.getBillsForCurrentDay());
     }, 2500);
@@ -44,13 +45,37 @@ const BottomContainer = () => {
   return (
     <Container>
       <Row>
-        <AddBillButton status="primary" size="medium">
+        <AddBillButton
+          status="primary"
+          size="medium"
+          onPress={() => dispatch(allActions.calendarActions.toggleAddBills())}
+        >
           Add a bill
         </AddBillButton>
+        <AddBill />
       </Row>
       <StyledRow>
-        {calendar.isLoadingBills ? (
-          <BulletList />
+        {isLoadingBills ? (
+          <>
+            <BulletList
+              width="100%"
+              height="275"
+              style={{
+                position: "absolute",
+                top: -25,
+                left: 0
+              }}
+            />
+            <BulletList
+              width="100%"
+              height="275"
+              style={{
+                position: "absolute",
+                top: 165,
+                left: 0
+              }}
+            />
+          </>
         ) : (
           <BillsText category="h3">No bills due today</BillsText>
         )}

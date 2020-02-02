@@ -6,7 +6,6 @@ import moment from "moment";
 
 const CalendarContainer = () => {
   const dispatch = useDispatch();
-
   const [today, setToday] = useState(null);
 
   useEffect(() => {
