@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
-import { Layout, Button, Text } from "@ui-kitten/components";
+import { Layout, Button, Text, Icon } from "@ui-kitten/components";
 import { Row } from "../../common/Row";
 import { BulletList } from "react-content-loader/native";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../../redux/actions";
 import styled from "styled-components";
 import AddBill from "./AddBill";
+
+const PlusIcon = () => <Icon name="plus" />;
 
 const Container = styled(Layout)`
   height: 100%;
@@ -17,9 +19,10 @@ const Container = styled(Layout)`
 `;
 
 const AddBillButton = styled(Button)`
-  width: 100%;
+  width: 45px;
   border-radius: 50px;
   box-shadow: 0 3px 13px rgba(51, 102, 255, 0.5);
+  align-self: flex-end;
 `;
 
 const StyledRow = styled(Row)`
@@ -44,16 +47,13 @@ const BottomContainer = () => {
 
   return (
     <Container>
-      <Row>
-        <AddBillButton
-          status="primary"
-          size="medium"
-          onPress={() => dispatch(allActions.calendarActions.toggleAddBills())}
-        >
-          Add a bill
-        </AddBillButton>
-        <AddBill />
-      </Row>
+      <AddBillButton
+        status="primary"
+        size="medium"
+        icon={PlusIcon}
+        onPress={() => dispatch(allActions.calendarActions.toggleAddBills())}
+      />
+      <AddBill />
       <StyledRow>
         {isLoadingBills ? (
           <>

@@ -11,6 +11,7 @@ import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { mapping, light as lightTheme } from "@eva-design/eva";
 import CalendarMain from "./components/calendar/CalendarMain";
 import * as Font from "expo-font";
+import { FeatherIconsPack } from "./feather-icons";
 import styled from "styled-components";
 
 const store = createStore(
@@ -46,7 +47,7 @@ const App = () => {
     <Provider store={store}>
       {fontLoaded ? (
         <>
-          <IconRegistry icons={EvaIconsPack} />
+          <IconRegistry icons={FeatherIconsPack} />
           <ApplicationProvider mapping={mapping} theme={lightTheme}>
             <Container>
               <CalendarMain />
