@@ -4,7 +4,7 @@ import allActions from "../../../redux/actions";
 import { Calendar } from "react-native-calendars";
 import moment from "moment";
 
-const CalendarContainer = () => {
+export const CalendarContainer = () => {
   const dispatch = useDispatch();
   const [today, setToday] = useState(null);
 
@@ -73,5 +73,3 @@ const CalendarContainer = () => {
     />
   );
 };
-
-export default CalendarContainer;

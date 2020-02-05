@@ -54,10 +54,10 @@ const BillInput = styled(Input)`
   width: 100%;
   border-radius: 50px;
   background: #ffffff;
-  box-shadow: 0 3px 13px rgba(182, 193, 205, 0.5);
+  box-shadow: 0 3px 13px #dae0eb;
 `;
 
-const AddBill = () => {
+export const AddBill = () => {
   const dispatch = useDispatch();
   const isAddBillsVisible = useSelector(
     state => state.calendar.isAddBillsVisible
@@ -105,5 +105,3 @@ const AddBill = () => {
     <Modal visible={isAddBillsVisible}>{renderIsAddBillVisibleModal()}</Modal>
   );
 };
-
-export default AddBill;

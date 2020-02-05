@@ -7,9 +7,8 @@ import {
   IconRegistry,
   Layout
 } from "@ui-kitten/components";
-import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { mapping, light as lightTheme } from "@eva-design/eva";
-import CalendarMain from "./components/calendar/CalendarMain";
+import { TabViewChange } from "./components/navigation/TabViewChange";
 import * as Font from "expo-font";
 import { FeatherIconsPack } from "./feather-icons";
 import styled from "styled-components";
@@ -50,7 +49,7 @@ const App = () => {
           <IconRegistry icons={FeatherIconsPack} />
           <ApplicationProvider mapping={mapping} theme={lightTheme}>
             <Container>
-              <CalendarMain />
+              <TabViewChange />
             </Container>
           </ApplicationProvider>
         </>

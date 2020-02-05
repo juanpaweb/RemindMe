@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Layout, Text } from "@ui-kitten/components";
 import { Row } from "../../common/Row";
 import { Column } from "../../common/Column";
-import CalendarContainer from "./CalendarContainer";
+import { CalendarContainer } from "./CalendarContainer";
 import moment from "moment";
 import styled from "styled-components";
 
@@ -16,7 +16,7 @@ const DateText = styled(Text)`
   color: #b6c1cd;
 `;
 
-const TopContainer = () => {
+export const TopContainer = () => {
   const [date, setDate] = useState(null);
 
   useEffect(() => {
@@ -46,5 +46,3 @@ const TopContainer = () => {
     </Container>
   );
 };
-
-export default TopContainer;

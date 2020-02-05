@@ -1,8 +1,8 @@
 import React from "react";
-import TopContainer from "./top-container/TopContainer";
-import BottomContainer from "./bottom-container/BottomContainer";
+import { TopContainer } from "./top-container/TopContainer";
+import { BottomContainer } from "./bottom-container/BottomContainer";
 
-const CalendarMain = () => {
+export const CalendarMain = () => {
   return (
     <>
       <TopContainer />
@@ -10,5 +10,3 @@ const CalendarMain = () => {
     </>
   );
 };
-
-export default CalendarMain;

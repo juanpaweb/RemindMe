@@ -5,7 +5,7 @@ import { BulletList } from "react-content-loader/native";
 import { useDispatch, useSelector } from "react-redux";
 import allActions from "../../../redux/actions";
 import styled from "styled-components";
-import AddBill from "./AddBill";
+import { AddBill } from "./AddBill";
 
 const PlusIcon = () => <Icon name="plus" />;
 
@@ -34,7 +34,7 @@ const BillsText = styled(Text)`
   color: #b6c1cd;
 `;
 
-const BottomContainer = () => {
+export const BottomContainer = () => {
   const dispatch = useDispatch();
   const isLoadingBills = useSelector(state => state.calendar.isLoadingBills);
 
@@ -62,7 +62,7 @@ const BottomContainer = () => {
               height="275"
               style={{
                 position: "absolute",
-                top: -25,
+                top: -45,
                 left: 0
               }}
             />
@@ -71,7 +71,7 @@ const BottomContainer = () => {
               height="275"
               style={{
                 position: "absolute",
-                top: 165,
+                top: 142,
                 left: 0
               }}
             />
@@ -83,5 +83,3 @@ const BottomContainer = () => {
     </Container>
   );
 };
-
-export default BottomContainer;
