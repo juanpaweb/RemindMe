@@ -1,8 +1,10 @@
 import calendar from "./calendar";
+import tabNavigation from "./tabNavigation";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
-  calendar
+  calendar,
+  tabNavigation
 });
 
 export default rootReducer;

@@ -3,6 +3,7 @@ import { TabViewNavigation } from "./TabViewNavigation";
 import { CalendarMain } from "../calendar/CalendarMain";
 import { ManageBills } from "../manage-bills/ManageBills";
 import { Settings } from "../settings/Settings";
+import { useSelector } from "react-redux";
 
 const renderTab = selectedIndex => {
   if (selectedIndex === 0) {
@@ -15,19 +16,12 @@ const renderTab = selectedIndex => {
 };
 
 export const TabViewChange = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const handleTabChange = selectedIndex => {
-    setSelectedIndex(selectedIndex);
-  };
+  const selectedIndex = useSelector(state => state.tabNavigation.selectedTab);
 
   return (
     <>
       {renderTab(selectedIndex)}
-      <TabViewNavigation
-        selectedIndex={selectedIndex}
-        handleTabChange={handleTabChange}
-      />
+      <TabViewNavigation />
     </>
   );
 };
