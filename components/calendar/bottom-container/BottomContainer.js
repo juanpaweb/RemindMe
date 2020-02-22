@@ -39,10 +39,7 @@ export const BottomContainer = () => {
   const isLoadingBills = useSelector(state => state.calendar.isLoadingBills);
 
   useEffect(() => {
-    // Temporary loading animation func for bills on selected day
-    setTimeout(() => {
-      dispatch(allActions.calendarActions.getBillsForCurrentDay());
-    }, 2500);
+    dispatch(allActions.calendarActions.loadBillsForDay());
   }, []);
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 import rootReducer from "./redux/reducers";
 import {
   ApplicationProvider,
@@ -13,10 +14,7 @@ import * as Font from "expo-font";
 import { FeatherIconsPack } from "./feather-icons";
 import styled from "styled-components";
 
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 const Container = styled(Layout)`
   flex: 1;

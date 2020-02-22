@@ -1,8 +1,28 @@
-import { GET_BILLS_FOR_DAY, TOGGLE_ADD_BILLS } from "../actionTypes";
+import {
+  GET_BILLS_FOR_DAY,
+  TOGGLE_ADD_BILLS,
+  IS_LOADING_BILLS_FOR_DAY
+} from "../actionTypes";
 
-const getBillsForCurrentDay = () => {
+const loadBillsForDay = () => {
+  return dispatch => {
+    dispatch(isLoadingBillsForDay());
+
+    setTimeout(() => {
+      dispatch(getBillsForDay());
+    }, 2500);
+  };
+};
+
+const getBillsForDay = () => {
   return {
     type: GET_BILLS_FOR_DAY
+  };
+};
+
+const isLoadingBillsForDay = () => {
+  return {
+    type: IS_LOADING_BILLS_FOR_DAY
   };
 };
 
@@ -13,6 +33,6 @@ const toggleAddBills = () => {
 };
 
 export default {
-  getBillsForCurrentDay,
+  loadBillsForDay,
   toggleAddBills
 };

@@ -22,12 +22,11 @@ const StyledBottomNavigation = styled(BottomNavigation)`
 `;
 
 const StyledBottomNavigationTab = styled(BottomNavigationTab)`
-  border-color: #ffffff;
   border-radius: 50px;
   box-shadow: ${props =>
     props.isSelected
       ? "0 3px 13px rgba(51, 102, 255, 0.5)"
-      : "0 0 0 rgba(0, 0, 0, 1)"};
+      : "0 0 0 rgba(0, 0, 0, 0)"};
   background: ${props => (props.isSelected ? "#3366ff" : "#ffffff")};
   margin: 0 32px;
 `;

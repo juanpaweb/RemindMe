@@ -23,9 +23,7 @@ export const CalendarContainer = () => {
     <Calendar
       style={{ paddingLeft: 0, paddingRight: 0, width: "100%" }}
       monthFormat={"MMMM"}
-      onDayPress={day =>
-        dispatch(allActions.calendarActions.toggleCalendarDetails())
-      }
+      onDayPress={day => dispatch(allActions.calendarActions.loadBillsForDay())}
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
       markingType={"custom"}

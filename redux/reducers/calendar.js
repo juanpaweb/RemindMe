@@ -1,12 +1,22 @@
-import { GET_BILLS_FOR_DAY, TOGGLE_ADD_BILLS } from "../actionTypes";
+import {
+  GET_BILLS_FOR_DAY,
+  TOGGLE_ADD_BILLS,
+  IS_LOADING_BILLS_FOR_DAY
+} from "../actionTypes";
 
 const initialState = {
-  isLoadingBills: true,
+  isLoadingBills: false,
   isAddBillsVisible: false
 };
 
 const calendar = (state = initialState, action) => {
   switch (action.type) {
+    case IS_LOADING_BILLS_FOR_DAY:
+      return {
+        ...state,
+        isLoadingBills: true
+      };
+
     case GET_BILLS_FOR_DAY:
       return {
         ...state,
