@@ -20,7 +20,7 @@ const Container = styled(Layout)`
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  background: #fff;
+  background: #3366ff;
   height: 100%;
   width: 100%;
 `;

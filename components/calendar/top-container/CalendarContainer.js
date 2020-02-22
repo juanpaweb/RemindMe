@@ -21,7 +21,12 @@ export const CalendarContainer = () => {
 
   return (
     <Calendar
-      style={{ paddingLeft: 0, paddingRight: 0, width: "100%" }}
+      style={{
+        paddingLeft: 0,
+        paddingRight: 0,
+        width: "100%",
+        backgroundColor: "#3366ff"
+      }}
       monthFormat={"MMMM"}
       onDayPress={day => dispatch(allActions.calendarActions.loadBillsForDay())}
       onPressArrowLeft={substractMonth => substractMonth()}
@@ -31,32 +36,30 @@ export const CalendarContainer = () => {
         [today]: {
           customStyles: {
             container: {
-              backgroundColor: "#3366ff",
-              shadowColor: "#3366ff",
-              shadowOffset: {
-                width: 0,
-                height: 0
-              },
-              shadowOpacity: 0.45,
-              shadowRadius: 8,
-              elevation: 9
+              backgroundColor: "#ffffff"
             },
             text: {
-              color: "#fff"
+              color: "#222b45"
             }
           }
         }
       }}
       theme={{
+        backgroundColor: "#3366ff",
+        calendarBackground: "#3366ff",
         textDayFontFamily: "roboto-light",
         textMonthFontFamily: "roboto-light",
         textDayHeaderFontFamily: "roboto-light",
         textDayFontSize: 16,
         textMonthFontSize: 16,
         textDayHeaderFontSize: 16,
-        todayTextColor: "#3366ff",
-        selectedDayBackgroundColor: "#3366ff",
-        arrowColor: "#3366ff",
+        todayTextColor: "#ffffff",
+        selectedDayBackgroundColor: "#ffffff",
+        textSectionTitleColor: "#ffffff",
+        dayTextColor: "#ffffff",
+        monthTextColor: "#ffffff",
+        textDisabledColor: "#222b45",
+        arrowColor: "#ffffff",
         "stylesheet.calendar.header": {
           arrow: {
             padding: 0

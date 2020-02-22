@@ -8,12 +8,16 @@ import styled from "styled-components";
 
 const Container = styled(Layout)`
   height: 50%;
-  background: #ffffff;
+  background: #3366ff;
   padding: 64px 16px 16px 16px;
 `;
 
+const CustomLayout = styled(Layout)`
+  background: #3366ff;
+`;
+
 const DateText = styled(Text)`
-  color: #b6c1cd;
+  color: #ffffff;
 `;
 
 export const TopContainer = () => {
@@ -32,7 +36,7 @@ export const TopContainer = () => {
 
   return (
     <Container>
-      <Layout>
+      <CustomLayout>
         <Row>
           <Column col={1.5}>
             <Text category="h1">Today, </Text>
@@ -42,7 +46,7 @@ export const TopContainer = () => {
           </Column>
         </Row>
         <CalendarContainer />
-      </Layout>
+      </CustomLayout>
     </Container>
   );
 };

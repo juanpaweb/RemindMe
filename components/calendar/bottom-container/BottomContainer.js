@@ -14,7 +14,6 @@ const Container = styled(Layout)`
   background: #ffffff;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  box-shadow: 0 -5px 10px #dae0eb;
   padding: 16px;
 `;
 
@@ -44,13 +43,6 @@ export const BottomContainer = () => {
 
   return (
     <Container>
-      <AddBillButton
-        status="primary"
-        size="medium"
-        icon={PlusIcon}
-        onPress={() => dispatch(allActions.calendarActions.toggleAddBills())}
-      />
-      <AddBill />
       <StyledRow>
         {isLoadingBills ? (
           <>
@@ -59,7 +51,7 @@ export const BottomContainer = () => {
               height="275"
               style={{
                 position: "absolute",
-                top: -45,
+                top: -40,
                 left: 0
               }}
             />
@@ -68,7 +60,7 @@ export const BottomContainer = () => {
               height="275"
               style={{
                 position: "absolute",
-                top: 142,
+                top: 147,
                 left: 0
               }}
             />
